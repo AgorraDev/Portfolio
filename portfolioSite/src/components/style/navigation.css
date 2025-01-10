@@ -1,0 +1,35 @@
+.navigation {
+    display: flex;
+    top: 90%;
+    right: 31%;
+    position: relative;
+    height: 4vh;
+  } 
+  
+  a {
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+    text-decoration: none;
+    margin: 0 4em;
+  }
+  @media only screen and (max-width:600px) {
+    .navigation {
+      justify-content: center;
+      right: 20%;
+      flex-wrap: wrap;
+    }
+    a {
+      position: relative;
+      bottom: 10vh;
+      margin-bottom: 4vh;
+    }
+    
+  }
+  a:hover {
+    text-decoration: underline orange .3em;
+  }
+  a:visited {
+    color: black;
+  }
+  

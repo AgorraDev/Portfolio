@@ -1,0 +1,139 @@
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+.contact-header {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.contact-copy {
+    text-wrap: wrap;
+    max-width: 40em;
+    line-height: 3em;
+}
+.contact-hook {
+    font-size: 1.1em;
+    line-height: 2em;
+}
+.contact-list {
+    font-size: .75em;
+}
+.contact-li {
+    margin: 1em 0;
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    left: 4em;
+    width: 44em;
+    height: 30em;
+
+    box-shadow: 0 20px 20px rgb(194, 194, 194) ;
+
+    background-color: rgb(157, 195, 209);
+    border-radius: 14px;
+}
+#contact-me {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.125em;
+}
+
+input, textarea{
+    margin: 1em 0;
+    margin-left: .5em;
+    background-color: rgb(157, 195, 209);
+    border: none;
+    border-bottom: 2px black solid;
+
+    width: 35%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+textarea {
+    display: flex;
+    width: 100%;
+    max-height: 50%;
+    resize: none;
+    margin: 1em 0 0 0;
+    padding: .5em;
+    background-color: rgb(140, 185, 201);
+    border-radius: 6px 6px 0 0;
+}
+
+input:focus-visible, textarea:focus-visible {
+    outline: none;
+}
+
+button {
+    align-self: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 1.2em;
+    width: 50%;
+    padding: 14px;
+    margin: 20px;
+    border: none;
+    border-radius: 4px;
+    color: aliceblue;
+    background-color: rgb(41, 41, 41);
+
+    box-shadow: 0 5px 10px rgb(54, 54, 54, .7);
+}
+button:hover {
+    transform: translateY(-2px);
+}
+
+@media only screen and (max-width:835px) {
+    h1 {
+        margin-bottom: 0;
+    }
+    .form-container {
+        top: 0;
+        left: 0;
+        width: 24em;
+    }
+    .contact-copy {
+        font-size: .9em;
+    }
+    .contact-li {
+        margin: .5em 0;
+    }
+    .contact-copy, .contact-hook {
+        margin: 0 1em;
+        max-width: 24em;
+    }
+    input {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    h1 {
+        margin-bottom: 0;
+    }
+    .form-container {
+        top: 0;
+        left: 0;
+        width: 24em;
+    }
+    .contact-copy, .contact-hook {
+        text-align: center;
+        margin: 0;
+        max-width: 24em;
+    }
+}

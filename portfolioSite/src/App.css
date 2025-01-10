@@ -1,0 +1,137 @@
+* { margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#hero-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+
+
+
+  background-image: url(assets/portfolio_bg1.png);
+  background-size: cover;
+ 
+}
+
+.my-info {
+  display: flex;
+  position: relative;
+  top: 3em;
+  left: 2.5em;
+  height: 40%;
+  width: 30%;
+  
+}
+
+ul {
+  padding: 10px;
+
+}
+li {
+  font-weight: bolder;
+  font-size: 3em;
+  list-style: none;
+}
+
+
+
+#projects {
+  display: flex;
+  height: auto;
+  width: 100%;
+  padding: 1em;
+  background-color:rgb(243, 243, 243);
+}
+#contact {
+  display: flex;
+  height:  100vh;
+  width: 100%;
+  padding: 1em;
+}
+#about { 
+  display: flex;
+  height: 100vh;
+}
+
+@media only screen and (max-width:1375px) {
+  #projects, #contact {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width:600px) {
+  
+  .wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  #hero-container {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 2em;
+  }
+  #projects {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-around;
+  }
+
+  #about {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  li {
+    font-size: 2.2em;
+  }
+  
+}
+
+@keyframes forwork {
+  from {width: 0}
+  to {width: 100%}
+
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+.working {
+  overflow: hidden;
+  border-right: .15em solid black;
+  white-space: nowrap;
+  animation: 
+    forwork 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* .animate-text-change {
+  display: inline;
+}
+.animate-text-change::before {
+  content: 'Web Designer';
+  animation: 
+  text-change 10s steps(50, end) infinite;
+}
+@keyframes text-change {
+  0% { 
+    content: 'Web Designer';
+  }
+  25% { content: 'User Experience';}
+  50% { content: 'Graphic Design';}
+  100% { content: 'Copy Writing';}
+} */

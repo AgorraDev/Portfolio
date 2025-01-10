@@ -1,0 +1,35 @@
+.project-wrapper {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
+    width: 100%;
+    height: auto;
+}
+h3 {
+    text-align: center;
+    height: 4em;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10em;
+    justify-content: center;
+}
+
+.project-card {
+    padding: 2%;
+    margin-top: 1em;
+    width: 30em;
+    height: 14em;
+    filter: brightness(.9);
+}
+
+@media only screen and (max-width:600px) {
+    .gallery {
+        padding-top: 2em;
+    }
+    .project-card {
+        width: 90vw;
+    }
+  }
