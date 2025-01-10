@@ -1,26 +1,12 @@
 const nodemailer = require('nodemailer');
-const express = require('express');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
-const cors = require('cors');
-const app = express();
-
-app.use(cors({ 
-    origin: ['http://localhost:5173',
-             'https://portfolio-ten-puce-59.vercel.app',
-             'https://portfolio-pjkhyjhdp-agorradevs-projects.vercel.app'
-            ],
-    methods: ['GET','POST'],
-    credentials: true,
-    allowedHeaders: ['Content-Type', 'x-api-key']
- }));
-
- app.use(express.json());
+// const express = require('express');
+// const cors = require('cors');
+// const app = express();
 
 //Setting limit on emails sent per 15mins to protect from spam
-let emailLimiter;
-if (!emailLimiter) {
 const emailLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, //15 minutes
     max: 3, //Limiting emails to 3 per 15 minutes
@@ -28,16 +14,39 @@ const emailLimiter = rateLimit({
         res.status(429).json({ message: 'Too many requests, please try again later.' })
     },
 });
-}
+
+// app.use(cors({ 
+//     origin: ['http://localhost:5173',
+//              'https://portfolio-ten-puce-59.vercel.app'
+//             ],
+//     methods: ['GET','POST'],
+//     credentials: true,
+//     allowedHeaders: ['Content-Type', 'x-api-key']
+//  }));
+
+//  app.use(express.json());
+
 
 module.exports = async (req, res) => {
+    //Manually set CORS headers
+    res.setHeader('Access-control-Allow-Origin', 'https://portfolio-ten-puce-59.vercel.app');
+    res.setHeader('Access-control-Allow-Methods', 'PSOT, OPTIONS');
+    res.setHeader('Access-control-Allow-Headers', 'Content-Type');
+    
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+    
     if(req.method !== 'POST') {
-        return res.status(405).json({ message: 'Method not allowed'})
+        return res.status(405).json({ message: 'Method not allowed'});
     }
 
-    emailLimiter(req, res, async () => {
-        const {name, email, message } = req.body;
- 
+
+    await new Promise ((resolve) => 
+        emailLimiter(req, res, resolve)
+    );
+
+    const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
         return res.status(400).json( {message: 'All fields are required.'});
@@ -68,5 +77,4 @@ module.exports = async (req, res) => {
         console.error('Error sending email:', error)
         res.status(500).json({ message: `Failed to send email.${error.message}`});
    }
-});
 };
