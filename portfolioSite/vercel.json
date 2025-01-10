@@ -6,8 +6,5 @@
         "source": "/(.*)",
         "destination": "/api" 
         }],
-    "buildCommand": "npm run build",
-    "engines": {
-        "node": "18.x"
-    }
+    "buildCommand": "npm run build"
 }
