@@ -23,7 +23,11 @@ const Contact = () => {
         console.log(e);
         
         try {
-            const res = await axios.post('http://localhost:5000/api/send-email', formData);
+            const res = await axios.post('https://portfolio-9kkcakmws-agorradevs-projects.vercel.app/api/send-email', formData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
             setStatus({ message: 'Message sent successfully', success: true});
         } catch (error) {
             console.log(formData);
