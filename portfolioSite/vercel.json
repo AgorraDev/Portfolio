@@ -11,5 +11,5 @@
         { "src": "/api/send-email", "dest": "/api/send-email.cjs" },
         { "src": "/(.*)", "dest": "/dist/$1" }
         ],
-    "buildCommand": "npm run build"
+    "buildCommand": "vite build"
 }
