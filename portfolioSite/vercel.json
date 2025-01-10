@@ -1,10 +1,13 @@
 
 {
     "version": 2, 
-    "rewrites": 
+    "builds": [
+        {"src": "/api/send-email.cjs", "use": "@vercel/node"}
+    ],
+    "routes": 
         [{ 
-        "source": "/api/send-email",
-        "destination": "/api/send-email.cjs" 
+        "src": "/api/send-email",
+        "dest": "/api/send-email.cjs" 
         }],
     "buildCommand": "npm run build"
 }
