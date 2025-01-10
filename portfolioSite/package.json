@@ -2,12 +2,11 @@
   "name": "portfoliosite",
   "private": true,
   "version": "0.0.0",
-  "proxy": "http://localhost:5000",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "maildev": "nodemon server.cjs",
-    "start": "node server.cjs",
+    "maildev": "nodemon send-email.cjs",
+    "start": "vite preview",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
