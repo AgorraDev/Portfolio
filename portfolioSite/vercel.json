@@ -1,13 +1,15 @@
 
 {
     "version": 2, 
-    "builds": [
-        {"src": "/api/send-email.cjs", "use": "@vercel/node"}
-    ],
+    "builds": 
+        [
+        {"src": "/api/send-email.cjs", "use": "@vercel/node"},
+        {"src": "dist/**/**", "use": "@vercel/static"}
+        ],
     "routes": 
-        [{ 
-        "src": "/api/send-email",
-        "dest": "/api/send-email.cjs" 
-        }],
+        [
+        { "src": "/api/send-email", "dest": "/api/send-email.cjs" },
+        { "src": "/(.*)", "dest": "/dist/$1" }
+        ],
     "buildCommand": "npm run build"
 }
