@@ -4,7 +4,7 @@
     "builds": 
         [
         {"src": "/api/send-email.cjs", "use": "@vercel/node"},
-        {"src": "dist/**/**", "use": "@vercel/static"}
+        {"src": "dist/**/*", "use": "@vercel/static"}
         ],
     "routes": 
         [
