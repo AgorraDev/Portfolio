@@ -8,7 +8,7 @@ const app = express();
 
 app.use(cors({ 
     origin: ['http://localhost:5173',
-             'https://your-vercel-site.vercel.app',
+             'https://portfolio-l2wnb17hk-agorradevs-projects.vercel.app/',
             ],
     methods: ['GET','POST'],
     credentials: true,
