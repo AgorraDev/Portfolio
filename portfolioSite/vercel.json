@@ -1,8 +1,13 @@
+
 {
     "version": 2, 
     "rewrites": 
         [{ 
         "source": "/(.*)",
         "destination": "/api" 
-        }]
+        }],
+    "buildCommand": "npm run build",
+    "engines": {
+        "node": "18.x"
+    }
 }
