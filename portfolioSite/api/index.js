@@ -29,7 +29,7 @@ const emailLimiter = rateLimit({
 
 module.exports = async (req, res) => {
     //Manually set CORS headers
-    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio-ten-puce-59.vercel.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio-puce-nine-33.vercel.app/');
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     
