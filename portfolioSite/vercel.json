@@ -1,7 +1,5 @@
-
-{
-    "version": 2,
-    "routes": [
-        { "src": "/api/send-email.cjs", "dest": "/api/send-email.cjs" }
-      ]
-}
+{ 
+  "version": 2, 
+  "rewrites": 
+    [{ "source": "/(.*)", "destination": "/api" }] 
+} 
