@@ -21,9 +21,15 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(e);
-        
+
+        // const origins = [
+        //     'http://localhost:5173',
+        //     'https://portfolio-ten-puce-59.vercel.app',
+        //     'https://portfolio-puce-nine-33.vercel.app',
+        //     'https://portfolio-agorradevs-projects.vercel.app'
+        // ]
         try {
-            const res = await axios.post('https://portfolio-ten-puce-59.vercel.app/api/send-email', formData, {
+            const res = await axios.post('https://portfolio-puce-nine-33.vercel.app/api/index', formData, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
