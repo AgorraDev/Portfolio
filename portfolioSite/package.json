@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "maildev": "nodemon send-email.cjs",
+    "maildev": "nodemon index.js",
     "start": "vite preview",
     "build": "vite build",
     "lint": "eslint .",

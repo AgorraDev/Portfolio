@@ -1,6 +1,7 @@
-const nodemailer = require('nodemailer');
-const rateLimit = require('express-rate-limit');
-require('dotenv').config();
+import nodemailer from 'nodemailer';
+import rateLimit from 'express-rate-limit';
+
+dotenv.config();
 
 // const express = require('express');
 // const cors = require('cors');
@@ -23,9 +24,9 @@ const allowedOrigins = [
                     ]
 
 
-module.exports = async (req, res) => {
+export default async (req, res) => {
     //Manually set CORS headers
-    const origin = req.headers.origin ;
+    const origin = req.headers.origin ; 
     if (allowedOrigins.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
     }
@@ -74,6 +75,6 @@ module.exports = async (req, res) => {
         return res.status(200).json({ message: 'Email sent successfully!'});
    } catch (error) {
         console.error('Error sending email:', error)
-        res.status(500).json({ message: `Failed to send email.${error.message}`});
+        return res.status(500).json({ message: `Failed to send email.${error.message}`});
    }
 };
