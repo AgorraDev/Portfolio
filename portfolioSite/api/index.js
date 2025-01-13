@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import rateLimit from 'express-rate-limit';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
