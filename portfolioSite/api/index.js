@@ -15,21 +15,20 @@ const emailLimiter = rateLimit({
     },
 });
 
-// app.use(cors({ 
-//     origin: ['http://localhost:5173',
-//              'https://portfolio-ten-puce-59.vercel.app'
-//             ],
-//     methods: ['GET','POST'],
-//     credentials: true,
-//     allowedHeaders: ['Content-Type', 'x-api-key']
-//  }));
-
-//  app.use(express.json());
+const allowedOrigins = [
+                    'http://localhost:5173',
+                    'https://portfolio-ten-puce-59.vercel.app',
+                    'https://portfolio-puce-nine-33.vercel.app',
+                    'https://portfolio-agorradevs-projects.vercel.app/'
+                    ]
 
 
 module.exports = async (req, res) => {
     //Manually set CORS headers
-    res.setHeader('Access-Control-Allow-Origin', 'https://portfolio-puce-nine-33.vercel.app/');
+    const origin = req.headers.origin ;
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader('Access-Control-Allow-Origin', origin);
+    }
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     
